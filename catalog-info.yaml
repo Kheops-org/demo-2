@@ -1,0 +1,32 @@
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-2
+  links:
+    - url: https://github.com/kheops-org/demo-2
+      title: Source Code
+      icon: github
+    - url: https://argocd-server-sreez.apps.oc-med.wk.nt.local/applications/sreez/demo-2
+      title: ArgoCD Deployment
+      icon: cached
+    - url: http://localhost:8090
+      title: HyperDX Logs and Monitoring
+      icon: monitor_heart
+    - url: https://devspaces.apps.oc-med.wk.nt.local#https://github.com/kheops-org/demo-2
+
+      title: VSCode Development Environment
+      icon: code
+  tags:
+    - go
+    - sreez
+  annotations:
+    argocd/app-name: demo-2
+    backstage.io/kubernetes-id: demo-2
+    github.com/workflows: docker-image.yml
+    github.com/project-slug: kheops-org/demo-2
+spec:
+  type: service
+  system: system:default/examples
+  lifecycle: production
+  owner: user:default/medmouine
